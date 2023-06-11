@@ -5,6 +5,9 @@ Outline:
 3. Logic (combinations)
 4. Do you want to continue?
 5. Pointing System
+6. ble ble ble
+7. blah blah blah
+8. foo bar baz
 
 Concepts:
 1. Nested if-else
