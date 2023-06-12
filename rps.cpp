@@ -15,3 +15,35 @@ Concepts:
     5.1 Parameters (Pass by Ref)
 6. Trapping
 */
+
+#include <iostream>
+#include <stdlib.h>
+#include <conio.h>
+using namespace std;
+
+int main() {
+    while (true) {
+        cout<<"Welcome to Rock, Paper, Scissors!"<<endl;
+        cout<<"[1] Play"<<endl;
+        cout<<"[2] Exit"<<endl;
+
+        char option;
+        try {
+            option = getch();
+        }
+        catch (...) {
+            exit(1);
+        }
+
+        if (option == 1) {
+            system("cls");
+        }
+        else if (option == 2) {
+            exit(0);
+        }
+        else {
+            exit(1);
+        }
+    }
+
+}
