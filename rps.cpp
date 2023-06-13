@@ -33,6 +33,10 @@ int main() {
         cout<<"[2] Exit"<<endl;
 
         int option;
+        string winConditions[50][50] = {"Draw!", "Player Wins!", "Computer Wins!",
+			"Computer Wins!", "Draw!", "Player Wins!",
+			"Player Wins", "Computer Wins!", "Draw!"
+		};
         
         cin>>option;
         
@@ -42,6 +46,7 @@ int main() {
 		}
 
         if (option == 1) {
+            system("cls");
             cout<<"Lets play rock, paper, scissors!"<<endl;
             cout<<"What do you want to pick?"<<endl;
             cout<<"[1] Rock"<<endl;
@@ -52,7 +57,7 @@ int main() {
 			cout<<"You chose... ";
 			
 			sleep(3);
-			
+						
 			if (option == 1) {
 				cout<<"Rock!"<<endl;
 			} 
@@ -62,12 +67,63 @@ int main() {
 			else if (option == 3) {
 				cout<<"Scissors!"<<endl;
 			}
+			else {
+				cout<<"hell naw"<<endl;
+				exit(0);
+			}
+			
+			int playerchoice = option - 1;
 			
 			cout<<"I choose...";
 			
 			unsigned int aioption = (rand() % 3) + 1;
 			
-			cout<<aioption<<endl;
+			sleep(3);
+			
+			if (aioption == 1) {
+				cout<<"Rock!"<<endl;
+			}
+			else if (aioption == 2) {
+				cout<<"Paper!"<<endl;
+			}
+			else if (aioption == 3) {
+				cout<<"Scissors!"<<endl;
+			}
+			
+			
+			
+			int aichoice = aioption - 1;
+			
+			if (option == 1) {
+				cout<<"\t R"<<endl;
+			}
+			if (option == 2) {
+				cout<<"\t P"<<endl;
+			}
+			if (option == 3) {
+				cout<<"\t S"<<endl;
+			}
+			
+			if (aioption == 1) {
+				cout<<"\t R"<<endl;
+			}
+			else if (aioption == 2) {
+				cout<<"\t P"<<endl;
+			}
+			else if (aioption == 3) {
+				cout<<"\t S"<<endl;
+			}
+			
+			sleep(2);
+			
+			system("cls");
+			
+			cout<<winConditions[playerchoice][aichoice]<<endl;
+			
+			sleep(5);
+			
+			system("cls");
+			
 			
 				
         }
