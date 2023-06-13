@@ -18,32 +18,67 @@ Concepts:
 
 #include <iostream>
 #include <stdlib.h>
-#include <conio.h>
+#include <windows.h>
+#include <unistd.h>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 int main() {
+	
+	srand(static_cast<unsigned int>(time(0)));
     while (true) {
         cout<<"Welcome to Rock, Paper, Scissors!"<<endl;
         cout<<"[1] Play"<<endl;
         cout<<"[2] Exit"<<endl;
 
-        char option;
-        try {
-            option = getch();
-        }
-        catch (...) {
-            exit(1);
-        }
+        int option;
+        
+        cin>>option;
+        
+        if (cin.fail()) {
+        	cout<<"No."<<endl;
+        	exit(1);
+		}
 
         if (option == 1) {
-            system("cls");
+            cout<<"Lets play rock, paper, scissors!"<<endl;
+            cout<<"What do you want to pick?"<<endl;
+            cout<<"[1] Rock"<<endl;
+            cout<<"[2] Paper"<<endl;
+			cout<<"[3] Scissors"<<endl;
+			cin>>option;
+			
+			cout<<"You chose... ";
+			
+			sleep(3);
+			
+			if (option == 1) {
+				cout<<"Rock!"<<endl;
+			} 
+			else if (option == 2) {
+				cout<<"Paper!"<<endl;
+			}
+			else if (option == 3) {
+				cout<<"Scissors!"<<endl;
+			}
+			
+			cout<<"I choose...";
+			
+			unsigned int aioption = (rand() % 3) + 1;
+			
+			cout<<aioption<<endl;
+			
+				
         }
         else if (option == 2) {
-            exit(0);
+        	break;
         }
         else {
+        	cout<<"wut da hell"<<endl;
             exit(1);
         }
     }
-
+    
+	return 0;
 }
